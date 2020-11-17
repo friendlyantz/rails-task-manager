@@ -1,0 +1,20 @@
+<h1>=== tasks index page === </h1>
+<ul>
+  <% @tasks.each do |task| %>
+  <li><%= "#{task.id} - Completed?: #{task.completed} --- #{task.title}" %> <%= link_to "Know more about this task", task_path(task) %> 
+    -----------
+      <%= link_to task_path(task.id), 
+     # class: "",
+     method: :delete,
+     data: { confirm: "Are you sure?" } do %>
+      <i class="fas fa-trash"></i> 
+
+      <% end %> 
+    </li>
+
+    <% end %>
+
+    <p>
+      <%= link_to "create new tasks", new_path %>
+    </p>
+  </ul>

@@ -1,0 +1,29 @@
+<h1> . ... tasks details page.... </h1>
+<strong>
+  
+  <%= @task.id %> - <%= @task.title %> 
+</strong>
+<p><%= @task.details %> </p>
+
+STATUS - Complete? <strong> <%= @task.completed %> </strong>
+<br>
+<a href="http://localhost:3000/tasks">back to tasks html link </a>
+ 
+ <p>
+   
+  <%= link_to "back - rails link", tasks_path %>
+ </p>
+
+ <p>
+  <%= link_to "EDIT", edit_path %>
+ </p>
+
+ <p>
+  <%= link_to task_path(@task), 
+     # class: "",
+     method: :delete,
+     data: { confirm: "Are you sure?" } do %>
+      <i class="fas fa-trash"></i> 
+      <p>delete</p>
+      <% end %>  
+ </p>
